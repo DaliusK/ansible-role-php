@@ -1,4 +1,10 @@
 ---
+- name: Ensure webtatic rpm repository is installed
+  sudo: yes
+  yum:
+    name: "https://mirror.webtatic.com/yum/el6/latest.rpm"
+    state: present
+
 - name: Ensure PHP packages are installed.
   yum:
     name: "{{ item }}"
